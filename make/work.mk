@@ -35,6 +35,10 @@ ifeq ($(NOCOMPILE),)
 
   ifeq ($(COMPILER),gfortran)
     include $(MAKE_DIR)/compile-settings-gnu.mk
+  else ifeq ($(COMPILER),ifx)
+    include $(MAKE_DIR)/compile-settings-ifx.mk
+  else ifeq ($(COMPILER),ifort)
+    include $(MAKE_DIR)/compile-settings-ifort.mk
   else
     $(error Unknown or unset COMPILER)
   endif
