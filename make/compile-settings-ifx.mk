@@ -3,9 +3,9 @@ FLAGS_CODE_SANITY := \
   -fstack-protector-all \
   -check bounds \
   -D_FORTIFY_SOURCE=2
-FFLAGS_FP_SANITY := -check uninit
+FFLAGS_FP_SANITY :=
 ifeq ($(WITH_FPE_CHECKS),yes)
-FFLAGS_FP_SANITY += -fpe0 -init=snan
+FFLAGS_FP_SANITY += -fpe0 -init=snan,arrays
 endif
 FFLAGS_FORTRAN_SANITY := -stand f08
 FLAGS_REPRO := -ffp-contract=off
@@ -19,7 +19,7 @@ else ifeq ($(PROFILE),release-with-dbg-info)
   FLAGS_DEBUG := -g
 else ifeq ($(PROFILE),debug)
   FLAGS_OPT := -O0
-  FLAGS_DEBUG := -g
+  FLAGS_DEBUG := -g -traceback
 else
   $(error Unknown or unset PROFILE)
 endif
