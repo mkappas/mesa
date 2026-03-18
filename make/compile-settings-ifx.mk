@@ -8,7 +8,7 @@ ifeq ($(WITH_FPE_CHECKS),yes)
 FFLAGS_FP_SANITY += -fpe0 -init=snan,arrays
 endif
 FFLAGS_FORTRAN_SANITY := -stand f08
-FLAGS_REPRO := -ffp-contract=off
+FLAGS_REPRO := -ffp-contract=fast
 FFLAGS_PREPROCESSOR := -cpp
 
 ifeq ($(PROFILE),release)
