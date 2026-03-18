@@ -95,10 +95,13 @@ ignore_too_large_correction = .true. ! for conv_vel's
       trace_history_value_name(4) = 'log_rel_run_E_err'
       trace_history_value_name(5) = 'dt_div_max_tau_conv'
 
-      photo_interval = 10
+      write_profiles_flag = .false.
+      do_history_file = .false.
+      photo_interval = 10000
       !profile_interval = 1
       !history_interval = 1
-      terminal_interval = 10 
+      terminal_interval = 10000
+      write_header_frequency = 10000
 
       x_integer_ctrl(5) =  7 ! Inlist part number
 
