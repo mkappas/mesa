@@ -16,7 +16,7 @@ FLAGS_REPRO := -ffp-contract=fast -ffast-math
 FFLAGS_PREPROCESSOR := -cpp
 
 ifeq ($(PROFILE),release)
-  FLAGS_OPT := -O2 -ftree-vectorize -march=native
+  FLAGS_OPT := -O3 -ftree-vectorize -march=native
   FLAGS_DEBUG :=
 else ifeq ($(PROFILE),release-with-dbg-info)
   FLAGS_OPT := -O2

@@ -12,7 +12,7 @@ FLAGS_REPRO := -ffp-contract=fast -fp-model=fast
 FFLAGS_PREPROCESSOR := -cpp
 
 ifeq ($(PROFILE),release)
-  FLAGS_OPT := -O2 -xHost
+  FLAGS_OPT := -O3 -xHost
   FLAGS_DEBUG :=
 else ifeq ($(PROFILE),release-with-dbg-info)
   FLAGS_OPT := -O2
