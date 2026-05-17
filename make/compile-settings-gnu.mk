@@ -12,7 +12,7 @@ ifeq ($(WITH_FPE_CHECKS),yes)
 FFLAGS_FP_SANITY += -ffpe-trap=invalid,overflow,zero -finit-real=snan
 endif
 FFLAGS_FORTRAN_SANITY := -std=f2008 -ffree-line-length-none -ffixed-line-length-none -Wno-unused-dummy-argument -Wno-compare-reals -Wno-do-subscript
-FLAGS_REPRO := -ffp-contract=off
+FLAGS_REPRO := -ffp-contract=fast -ffast-math
 FFLAGS_PREPROCESSOR := -cpp
 
 ifeq ($(PROFILE),release)
