@@ -8,14 +8,14 @@ ifeq ($(WITH_FPE_CHECKS),yes)
 FFLAGS_FP_SANITY += -fpe0 -init=snan,arrays
 endif
 FFLAGS_FORTRAN_SANITY := -stand f08
-FLAGS_REPRO := -ffp-contract=fast
+FLAGS_REPRO := -ffp-contract=off
 FFLAGS_PREPROCESSOR := -cpp
 
 ifeq ($(PROFILE),release)
-  FLAGS_OPT := -O2 -xHost
+  FLAGS_OPT := -O2
   FLAGS_DEBUG :=
 else ifeq ($(PROFILE),release-with-dbg-info)
-  FLAGS_OPT := -O2 -xHost
+  FLAGS_OPT := -O2
   FLAGS_DEBUG := -g
 else ifeq ($(PROFILE),debug)
   FLAGS_OPT := -O0
